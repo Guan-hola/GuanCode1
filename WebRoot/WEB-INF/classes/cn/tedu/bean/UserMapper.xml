@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace 映射文件的唯一标识 -->
+<mapper namespace="pojo.UserMapper">
+	<select id="hasUser" resultType="User">select * from user where username=${username}</select>
+	
+	<insert id="registUser">insert into user values(${user.id},${user.username},${user.password},
+		${user.nickname},${user.email},${user.role})</insert>
+
+	<select id="loginUser">select * from user where username={username} and password=${password}</select>
+
+</mapper>
